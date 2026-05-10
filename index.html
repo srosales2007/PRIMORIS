@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PRIMORIS — Where Businesses Come To Grow</title>
+<meta name="description" content="PRIMORIS partners with ambitious companies to scale, refine, and dominate. Strategy, brand, and growth — under one roof." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" type="image/png" href="IMAGES/image%204-Photoroom.png" />
+</head>
+<body>
+
+<!-- Custom cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-dot" id="cursor-dot"></div>
+
+<!-- Page loader -->
+<div class="loader" id="loader">
+  <div class="loader-inner">
+    <img src="IMAGES/image%204-Photoroom.png" alt="" class="loader-star" />
+    <span class="loader-text">PRIMORIS</span>
+  </div>
+  <div class="loader-bar"><span></span></div>
+</div>
+
+<!-- Floating decorative stars -->
+<div class="floating-decor">
+  <img src="IMAGES/image%204-Photoroom.png" class="float-star f1" alt="" />
+  <img src="IMAGES/image%204-Photoroom.png" class="float-star f2" alt="" />
+  <img src="IMAGES/image%204-Photoroom.png" class="float-star f3" alt="" />
+</div>
+
+<!-- Navigation -->
+<header class="nav" id="nav">
+  <a href="#top" class="nav-logo" data-magnetic>
+    <img src="IMAGES/image-Photoroom.png" alt="Primoris" />
+  </a>
+  <nav class="nav-links">
+    <a href="#about" class="nav-link"><span>About</span></a>
+    <a href="#services" class="nav-link"><span>Services</span></a>
+    <a href="#clients" class="nav-link"><span>Clients</span></a>
+    <a href="#process" class="nav-link"><span>Process</span></a>
+    <a href="#contact" class="nav-link"><span>Contact</span></a>
+  </nav>
+  <a href="#contact" class="nav-cta" data-magnetic>
+    <span>Start Growing</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+  </a>
+  <button class="nav-burger" id="burger" aria-label="Menu"><span></span><span></span></button>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="top">
+  <div class="hero-bg-grid"></div>
+
+  <div class="hero-tag">
+    <span class="dot"></span>
+    <span>Est. — Where Businesses Come To Grow</span>
+  </div>
+
+  <h1 class="hero-title">
+    <span class="line"><span class="word" data-text="Where">Where</span></span>
+    <span class="line"><span class="word italic" data-text="businesses">businesses</span></span>
+    <span class="line">
+      <span class="word" data-text="come">come</span>
+      <img src="IMAGES/image%204-Photoroom.png" class="hero-inline-star" alt="" />
+      <span class="word" data-text="to">to</span>
+    </span>
+    <span class="line"><span class="word grow-word" data-text="grow.">grow.</span></span>
+  </h1>
+
+  <div class="hero-meta">
+    <p class="hero-sub">
+      We partner with ambitious founders and established brands to engineer real,
+      compounding growth — through strategy, design, and execution that actually moves numbers.
+    </p>
+    <div class="hero-cta-row">
+      <a href="#clients" class="btn-primary" data-magnetic>
+        <span>See Our Work</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#contact" class="btn-ghost" data-magnetic>
+        <span>Book a Call</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"><span></span></div>
+  </div>
+
+  <!-- Marquee ribbon under hero -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>BRAND STRATEGY</span><img src="IMAGES/image%204-Photoroom.png" alt="" />
+      <span>GROWTH MARKETING</span><img src="IMAGES/image%204-Photoroom.png" alt="" />
+      <span>WEB DESIGN</span><img src="IMAGES/image%204-Photoroom.png" alt="" />
+      <span>CONSULTING</span><img src="IMAGES/image%204-Photoroom.png" alt="" />
+      <span>IDENTITY</span><img src="IMAGES/image%204-Photoroom.png" alt="" />
+      <span>BRAND STRATEGY</span><img src="IMAGES/image%204-Photoroom.png" alt="" />
+      <span>GROWTH MARKETING</span><img src="IMAGES/image%204-Photoroom.png" alt="" />
+      <span>WEB DESIGN</span><img src="IMAGES/image%204-Photoroom.png" alt="" />
+      <span>CONSULTING</span><img src="IMAGES/image%204-Photoroom.png" alt="" />
+      <span>IDENTITY</span><img src="IMAGES/image%204-Photoroom.png" alt="" />
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="about" id="about">
+  <div class="section-label">
+    <span class="num">01</span>
+    <span>About</span>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-headline reveal">
+      <h2>
+        A studio built for<br />
+        the <em>compound&nbsp;era</em><span class="dot-end">.</span>
+      </h2>
+    </div>
+
+    <div class="about-body">
+      <p class="about-lead reveal">
+        PRIMORIS is a hybrid growth studio. Half strategists, half operators —
+        we sit between founder and market and translate ambition into output.
+      </p>
+      <p class="reveal">
+        We don't sell vanity decks. We build the systems, brands, and funnels
+        that take a business from <strong>"interesting"</strong> to <strong>"inevitable."</strong>
+        Every engagement is shaped to one number: the one that matters to you.
+      </p>
+      <div class="about-pillars">
+        <div class="pillar reveal" data-delay="0">
+          <span class="pillar-num">+340<i>%</i></span>
+          <span class="pillar-label">Avg. revenue lift</span>
+        </div>
+        <div class="pillar reveal" data-delay="120">
+          <span class="pillar-num">12<i>+</i></span>
+          <span class="pillar-label">Industries served</span>
+        </div>
+        <div class="pillar reveal" data-delay="240">
+          <span class="pillar-num">94<i>%</i></span>
+          <span class="pillar-label">Client retention</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <img src="IMAGES/image%204-Photoroom.png" alt="" class="about-deco-star parallax" data-speed="0.15" />
+</section>
+
+<!-- Services -->
+<section class="services" id="services">
+  <div class="section-label light">
+    <span class="num">02</span>
+    <span>Services</span>
+  </div>
+
+  <h2 class="section-title reveal">
+    Built like a stack.<br />
+    Sold like a partner.
+  </h2>
+
+  <div class="services-grid">
+    <article class="service-card reveal" data-delay="0">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+          <path d="M3 12h4l3-9 4 18 3-9h4"/>
+        </svg>
+      </div>
+      <span class="service-num">/01</span>
+      <h3>Brand Strategy</h3>
+      <p>Positioning, narrative, and identity systems that decide a category before competitors realize there is one.</p>
+      <ul>
+        <li>Market positioning</li>
+        <li>Visual identity</li>
+        <li>Messaging frameworks</li>
+      </ul>
+      <div class="service-arrow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+      </div>
+    </article>
+
+    <article class="service-card reveal" data-delay="100">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+          <path d="M12 2v20M2 12h20M5 5l14 14M19 5L5 19"/>
+        </svg>
+      </div>
+      <span class="service-num">/02</span>
+      <h3>Growth Marketing</h3>
+      <p>Performance funnels, paid acquisition, and retention loops engineered for measurable, repeatable lift.</p>
+      <ul>
+        <li>Paid media architecture</li>
+        <li>Conversion optimization</li>
+        <li>Lifecycle automation</li>
+      </ul>
+      <div class="service-arrow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+      </div>
+    </article>
+
+    <article class="service-card reveal" data-delay="200">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+          <rect x="3" y="3" width="18" height="18" rx="2"/>
+          <path d="M3 9h18M9 21V9"/>
+        </svg>
+      </div>
+      <span class="service-num">/03</span>
+      <h3>Digital Experience</h3>
+      <p>Sites, products, and platforms designed to convert — without compromising the brand they live inside.</p>
+      <ul>
+        <li>Web & product design</li>
+        <li>Custom builds</li>
+        <li>Design systems</li>
+      </ul>
+      <div class="service-arrow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+      </div>
+    </article>
+
+    <article class="service-card reveal" data-delay="300">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M12 3v18M3 12h18"/>
+        </svg>
+      </div>
+      <span class="service-num">/04</span>
+      <h3>Advisory</h3>
+      <p>Fractional partnership for founders navigating scale — fundraising, GTM, and team velocity, on a retainer.</p>
+      <ul>
+        <li>Founder coaching</li>
+        <li>GTM playbooks</li>
+        <li>Quarterly OKRs</li>
+      </ul>
+      <div class="service-arrow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Clients / Portfolio -->
+<section class="clients" id="clients">
+  <div class="section-label">
+    <span class="num">03</span>
+    <span>Clients</span>
+  </div>
+
+  <div class="clients-header">
+    <h2 class="reveal">
+      The companies we've<br />
+      <em>helped&nbsp;build</em>.
+    </h2>
+    <p class="reveal">A short selection from the studio's recent work.</p>
+  </div>
+
+  <div class="clients-grid">
+
+    <article class="client-card reveal" data-delay="0" style="--accent:#0A0A0A">
+      <div class="client-card-top">
+        <span class="client-tag">Fintech</span>
+        <span class="client-year">'25</span>
+      </div>
+      <div class="client-card-mid">
+        <span class="client-mono">N</span>
+      </div>
+      <div class="client-card-bottom">
+        <h3>Northbeam Capital</h3>
+        <p>Repositioning + identity overhaul. Lifted ARR 218% post-launch.</p>
+        <div class="client-meta">
+          <span>Brand</span><span>·</span><span>Web</span><span>·</span><span>GTM</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="client-card reveal" data-delay="80" style="--accent:#1c1c1c">
+      <div class="client-card-top">
+        <span class="client-tag">Hospitality</span>
+        <span class="client-year">'25</span>
+      </div>
+      <div class="client-card-mid">
+        <span class="client-mono">L</span>
+      </div>
+      <div class="client-card-bottom">
+        <h3>Lumen House</h3>
+        <p>Boutique hotel chain. Built the brand & booking funnel from zero.</p>
+        <div class="client-meta">
+          <span>Identity</span><span>·</span><span>Web</span><span>·</span><span>Photo</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="client-card reveal" data-delay="160" style="--accent:#0A0A0A">
+      <div class="client-card-top">
+        <span class="client-tag">D2C</span>
+        <span class="client-year">'24</span>
+      </div>
+      <div class="client-card-mid">
+        <span class="client-mono">A</span>
+      </div>
+      <div class="client-card-bottom">
+        <h3>Atria Goods</h3>
+        <p>Premium home essentials. Scaled paid acquisition 6× in 9 months.</p>
+        <div class="client-meta">
+          <span>Growth</span><span>·</span><span>Creative</span><span>·</span><span>CRM</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="client-card reveal" data-delay="240" style="--accent:#1c1c1c">
+      <div class="client-card-top">
+        <span class="client-tag">SaaS</span>
+        <span class="client-year">'24</span>
+      </div>
+      <div class="client-card-mid">
+        <span class="client-mono">V</span>
+      </div>
+      <div class="client-card-bottom">
+        <h3>Vertex.io</h3>
+        <p>B2B platform launch. From stealth to Series A in 11 months.</p>
+        <div class="client-meta">
+          <span>Strategy</span><span>·</span><span>Brand</span><span>·</span><span>Site</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="client-card reveal" data-delay="320" style="--accent:#0A0A0A">
+      <div class="client-card-top">
+        <span class="client-tag">Wellness</span>
+        <span class="client-year">'24</span>
+      </div>
+      <div class="client-card-mid">
+        <span class="client-mono">M</span>
+      </div>
+      <div class="client-card-bottom">
+        <h3>Meridian Studio</h3>
+        <p>DTC supplement brand. Built the launch playbook & scaled to 8-figures.</p>
+        <div class="client-meta">
+          <span>Brand</span><span>·</span><span>Growth</span><span>·</span><span>Ops</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="client-card reveal" data-delay="400" style="--accent:#1c1c1c">
+      <div class="client-card-top">
+        <span class="client-tag">Real Estate</span>
+        <span class="client-year">'23</span>
+      </div>
+      <div class="client-card-mid">
+        <span class="client-mono">H</span>
+      </div>
+      <div class="client-card-bottom">
+        <h3>Halcyon Group</h3>
+        <p>Luxury developer. New identity, sales experience, and lead engine.</p>
+        <div class="client-meta">
+          <span>Identity</span><span>·</span><span>Web</span><span>·</span><span>CRM</span>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <a href="#contact" class="clients-cta" data-magnetic>
+    <span>Become the next case study</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+  </a>
+</section>
+
+<!-- Logos marquee -->
+<section class="logos">
+  <div class="logos-track">
+    <span>NORTHBEAM</span><i>★</i>
+    <span>LUMEN&nbsp;HOUSE</span><i>★</i>
+    <span>ATRIA</span><i>★</i>
+    <span>VERTEX</span><i>★</i>
+    <span>MERIDIAN</span><i>★</i>
+    <span>HALCYON</span><i>★</i>
+    <span>OAKWELL</span><i>★</i>
+    <span>SOLACE</span><i>★</i>
+    <span>NORTHBEAM</span><i>★</i>
+    <span>LUMEN&nbsp;HOUSE</span><i>★</i>
+    <span>ATRIA</span><i>★</i>
+    <span>VERTEX</span><i>★</i>
+    <span>MERIDIAN</span><i>★</i>
+    <span>HALCYON</span><i>★</i>
+    <span>OAKWELL</span><i>★</i>
+    <span>SOLACE</span><i>★</i>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="process" id="process">
+  <div class="section-label light">
+    <span class="num">04</span>
+    <span>Process</span>
+  </div>
+
+  <h2 class="section-title reveal">
+    Four phases.<br />
+    One outcome: <em>growth</em>.
+  </h2>
+
+  <div class="process-list">
+    <div class="process-row reveal">
+      <span class="p-num">/01</span>
+      <h3>Diagnose</h3>
+      <p>Deep audit of brand, market, funnel, and team. We surface every break before we touch the build.</p>
+      <span class="p-time">Week 1–2</span>
+    </div>
+    <div class="process-row reveal">
+      <span class="p-num">/02</span>
+      <h3>Design</h3>
+      <p>Strategy, identity, and architecture — locked into a single direction with clear KPIs.</p>
+      <span class="p-time">Week 3–5</span>
+    </div>
+    <div class="process-row reveal">
+      <span class="p-num">/03</span>
+      <h3>Deploy</h3>
+      <p>We build, ship, and launch. Whether that's a brand, a site, a campaign, or all of the above.</p>
+      <span class="p-time">Week 6–10</span>
+    </div>
+    <div class="process-row reveal">
+      <span class="p-num">/04</span>
+      <h3>Develop</h3>
+      <p>Optimization, iteration, advisory. Growth is not a deliverable — it is a habit.</p>
+      <span class="p-time">Ongoing</span>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonial -->
+<section class="testimonial">
+  <img src="IMAGES/image%204-Photoroom.png" class="t-star left parallax" data-speed="0.1" alt="" />
+  <img src="IMAGES/image%204-Photoroom.png" class="t-star right parallax" data-speed="0.18" alt="" />
+
+  <blockquote class="reveal">
+    <p>
+      <span class="quote-mark">“</span>PRIMORIS rebuilt our brand and doubled our pipeline
+      in a single quarter. They operate like an extension of the team — except sharper.<span class="quote-mark">”</span>
+    </p>
+    <footer>
+      <span class="author">— Eli Vance</span>
+      <span class="role">CEO, Vertex.io</span>
+    </footer>
+  </blockquote>
+</section>
+
+<!-- Contact / CTA -->
+<section class="contact" id="contact">
+  <div class="section-label light">
+    <span class="num">05</span>
+    <span>Contact</span>
+  </div>
+
+  <h2 class="contact-title reveal">
+    <span>Let's make it</span>
+    <span class="contact-word"><em>inevitable</em>.</span>
+  </h2>
+
+  <div class="contact-grid">
+    <a href="mailto:hello@primoris.studio" class="contact-card reveal" data-magnetic>
+      <span class="cc-label">Email</span>
+      <span class="cc-value">hello@primoris.studio</span>
+      <span class="cc-arrow">↗</span>
+    </a>
+    <a href="#" class="contact-card reveal" data-magnetic>
+      <span class="cc-label">Studio</span>
+      <span class="cc-value">By appointment only</span>
+      <span class="cc-arrow">↗</span>
+    </a>
+    <a href="#" class="contact-card reveal" data-magnetic>
+      <span class="cc-label">Social</span>
+      <span class="cc-value">@primoris.studio</span>
+      <span class="cc-arrow">↗</span>
+    </a>
+  </div>
+
+  <a href="mailto:hello@primoris.studio" class="contact-big-btn reveal" data-magnetic>
+    <span>Start a project</span>
+    <span class="cbb-circle">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </span>
+  </a>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-top">
+    <img src="IMAGES/Untitled-1-Photoroom.png" alt="Primoris — Where Businesses Come To Grow" class="footer-logo" />
+  </div>
+  <div class="footer-mid">
+    <div class="footer-col">
+      <span class="fc-label">Studio</span>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+    </div>
+    <div class="footer-col">
+      <span class="fc-label">Work</span>
+      <a href="#clients">Clients</a>
+      <a href="#clients">Case Studies</a>
+      <a href="#contact">Approach</a>
+    </div>
+    <div class="footer-col">
+      <span class="fc-label">Connect</span>
+      <a href="mailto:hello@primoris.studio">Email</a>
+      <a href="#">Instagram</a>
+      <a href="#">LinkedIn</a>
+    </div>
+    <div class="footer-col">
+      <span class="fc-label">Legal</span>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">© Primoris</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 PRIMORIS Studio.</span>
+    <span>Crafted with intention.</span>
+    <a href="#top" class="back-top" data-magnetic>Back to top ↑</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

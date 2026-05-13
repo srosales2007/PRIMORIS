@@ -22,15 +22,90 @@ document.addEventListener("DOMContentLoaded", () => {
   initServiceCardTilt();
 });
 
-/* --------------------------- loader --------------------------- */
+/* --------------------------- loader: boot sequence --------------------------- */
 function initLoader() {
   const loader = document.getElementById("loader");
   if (!loader) return;
-  window.addEventListener("load", () => {
-    setTimeout(() => loader.classList.add("done"), 1500);
+  const fill = document.getElementById("loader-fill");
+  const pctEl = document.getElementById("loader-pct-num");
+  const consoleEl = document.getElementById("loader-console");
+  const clockEl = document.getElementById("loader-clock");
+
+  // lock scrolling while booting
+  document.body.style.overflow = "hidden";
+
+  // boot lines, with synthetic latencies
+  const lines = [
+    { t: 120,  text: "> CONNECTING TO PRIMORIS MAINFRAME", ok: "OK" },
+    { t: 700,  text: "> AUTHENTICATING STUDIO CREDENTIALS", ok: "OK" },
+    { t: 1250, text: "> LOADING BRAND ASSETS // 142 FILES", ok: "OK" },
+    { t: 1900, text: "> COMPILING GROWTH ENGINE", ok: "OK" },
+    { t: 2500, text: "> SYNCING CLIENT REGISTRY", ok: "OK" },
+    { t: 3000, text: "> CALIBRATING TYPOGRAPHY",  ok: "OK" },
+    { t: 3400, text: "> SYSTEM READY", ok: "READY" }
+  ];
+
+  // print lines on schedule
+  lines.forEach(line => {
+    setTimeout(() => {
+      const div = document.createElement("div");
+      div.className = "console-line";
+      div.innerHTML = `<span>${line.text}</span><span class="${line.ok === 'READY' ? 'ok' : 'ok'}">${line.ok}</span>`;
+      consoleEl.appendChild(div);
+      // keep last 4 visible
+      while (consoleEl.children.length > 5) consoleEl.removeChild(consoleEl.firstChild);
+    }, line.t);
   });
-  // safety net if load already fired
-  setTimeout(() => loader.classList.add("done"), 2400);
+
+  // ticking "uptime" clock
+  const start = Date.now();
+  const tick = () => {
+    const s = Math.floor((Date.now() - start) / 1000);
+    const hh = String(Math.floor(s / 3600)).padStart(2, "0");
+    const mm = String(Math.floor(s / 60) % 60).padStart(2, "0");
+    const ss = String(s % 60).padStart(2, "0");
+    if (clockEl) clockEl.textContent = `${hh} : ${mm} : ${ss}`;
+  };
+  const clockId = setInterval(tick, 1000);
+
+  // progress 0 → 100
+  const dur = 3700;
+  const t0 = performance.now();
+  let pct = 0;
+  const ease = t => t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+  const step = (now) => {
+    const t = Math.min((now - t0) / dur, 1);
+    pct = ease(t) * 100;
+    if (fill) fill.style.width = pct + "%";
+    if (pctEl) pctEl.textContent = String(Math.floor(pct)).padStart(3, "0");
+    if (t < 1) requestAnimationFrame(step);
+    else {
+      loader.classList.add("ready");
+    }
+  };
+  requestAnimationFrame(step);
+
+  // dismiss on any key/click after ready
+  const dismiss = () => {
+    if (!loader.classList.contains("ready")) return;
+    loader.classList.add("exiting");
+    setTimeout(() => {
+      loader.classList.add("done");
+      document.body.style.overflow = "";
+      clearInterval(clockId);
+    }, 700);
+    window.removeEventListener("keydown", dismiss);
+    window.removeEventListener("click", dismiss);
+    window.removeEventListener("touchstart", dismiss);
+  };
+  window.addEventListener("keydown", dismiss);
+  window.addEventListener("click", dismiss);
+  window.addEventListener("touchstart", dismiss);
+
+  // safety auto-dismiss after 8s
+  setTimeout(() => {
+    if (!loader.classList.contains("done")) dismiss();
+  }, 8500);
 }
 
 /* --------------------------- custom cursor -------------------- */
@@ -102,13 +177,54 @@ function initReveal() {
   items.forEach(el => io.observe(el));
 }
 
-/* --------------------------- nav scroll state ----------------- */
+/* --------------------------- nav scroll + dissolve ------------ */
 function initNavScroll() {
   const nav = document.getElementById("nav");
   if (!nav) return;
+
+  let lastY = window.scrollY;
+  let lastDir = "up";
+  // small accumulation so direction-flips are decisive
+  let acc = 0;
+
   const onScroll = () => {
-    if (window.scrollY > 60) nav.classList.add("scrolled");
+    const y = Math.max(0, window.scrollY);
+
+    // scrolled state for the glass background
+    if (y > 60) nav.classList.add("scrolled");
     else nav.classList.remove("scrolled");
+
+    // direction
+    const delta = y - lastY;
+    if (Math.abs(delta) < 2) return;
+    const dir = delta > 0 ? "down" : "up";
+    if (dir !== lastDir) acc = 0;
+    acc += Math.abs(delta);
+    lastDir = dir;
+
+    // dissolve progress — first 220px of scroll dissolves it 0→1
+    const dissolveStart = 80;
+    const dissolveEnd = 320;
+    const p = Math.min(Math.max((y - dissolveStart) / (dissolveEnd - dissolveStart), 0), 1);
+    nav.style.setProperty("--scroll-progress", p.toFixed(3));
+    nav.classList.add("dissolving");
+
+    // full dissolve when scrolling DOWN past threshold
+    if (dir === "down" && y > 400 && acc > 30) {
+      nav.classList.add("dissolved");
+    }
+    // reappear when scrolling UP
+    if (dir === "up" && acc > 30) {
+      nav.classList.remove("dissolved");
+    }
+    // fully reset at the very top
+    if (y < 20) {
+      nav.classList.remove("dissolved");
+      nav.classList.remove("dissolving");
+      nav.style.setProperty("--scroll-progress", "0");
+    }
+
+    lastY = y;
   };
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });

@@ -17,13 +17,42 @@
 <div class="cursor" id="cursor"></div>
 <div class="cursor-dot" id="cursor-dot"></div>
 
-<!-- Page loader -->
+<!-- Page loader — boot sequence -->
 <div class="loader" id="loader">
-  <div class="loader-inner">
-    <img src="IMAGES/image%204-Photoroom.png" alt="" class="loader-star" />
-    <span class="loader-text">PRIMORIS</span>
+  <div class="loader-scanlines"></div>
+  <div class="loader-grid"></div>
+  <div class="loader-vignette"></div>
+
+  <span class="loader-corner tl"><i class="blink-dot"></i> SYS / ONLINE</span>
+  <span class="loader-corner tr">PRIMORIS&nbsp;//&nbsp;v.2026.04</span>
+  <span class="loader-corner bl" id="loader-clock">00 : 00 : 00</span>
+  <span class="loader-corner br">BOOT&nbsp;SEQUENCE</span>
+
+  <div class="loader-stage">
+    <div class="loader-mark">
+      <img src="IMAGES/image%204-Photoroom.png" class="loader-star" alt="" />
+      <h1 class="loader-name">
+        <span>P</span><span>R</span><span>I</span><span>M</span><span>O</span><span>R</span><span>I</span><span>S</span>
+      </h1>
+      <span class="loader-sub">— WHERE BUSINESSES COME TO GROW —</span>
+    </div>
+
+    <div class="loader-console" id="loader-console"></div>
+
+    <div class="loader-bar-row">
+      <div class="loader-bar"><span id="loader-fill"></span></div>
+      <div class="loader-pct">
+        <span id="loader-pct-num">000</span>
+        <span class="pct-sign">%</span>
+      </div>
+    </div>
+
+    <div class="loader-press" id="loader-press">
+      <span class="bracket">[</span>
+      <span class="press-label">PRESS ANY KEY TO ENTER</span>
+      <span class="bracket">]</span>
+    </div>
   </div>
-  <div class="loader-bar"><span></span></div>
 </div>
 
 <!-- Floating decorative stars -->
@@ -66,7 +95,6 @@
     <span class="line"><span class="word italic" data-text="businesses">businesses</span></span>
     <span class="line">
       <span class="word" data-text="come">come</span>
-      <img src="IMAGES/image%204-Photoroom.png" class="hero-inline-star" alt="" />
       <span class="word" data-text="to">to</span>
     </span>
     <span class="line"><span class="word grow-word" data-text="grow.">grow.</span></span>

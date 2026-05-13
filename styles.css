@@ -337,12 +337,22 @@ body::before {
   transform: translateY(-110%);
 }
 .nav-logo {
-  display: flex; align-items: center;
-  transition: transform .4s var(--ease);
+  display: flex; align-items: center; justify-content: flex-start;
+  width: 280px;
+  height: 96px;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: width .5s var(--ease), height .5s var(--ease), transform .4s var(--ease);
 }
-.nav-logo img { width: 170px; height: auto; transition: transform .6s var(--ease); }
+.nav-logo img {
+  width: 280px;
+  height: auto;
+  flex-shrink: 0;
+  transition: width .5s var(--ease), transform .6s var(--ease);
+}
 .nav-logo:hover img { transform: scale(1.05) rotate(-2deg); }
-.nav.scrolled .nav-logo img { width: 130px; }
+.nav.scrolled .nav-logo { width: 200px; height: 70px; }
+.nav.scrolled .nav-logo img { width: 200px; }
 
 .nav-links {
   display: flex; gap: 6px;
@@ -496,6 +506,8 @@ body::before {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: wordRise 1.2s var(--ease) forwards, shimmer 6s linear infinite;
+  padding-right: 0.12em;
+  margin-right: -0.04em;
 }
 .hero-title .grow-word {
   font-style: italic;
@@ -669,18 +681,10 @@ body::before {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shimmer 8s linear infinite;
-}
-.dot-end {
   display: inline-block;
-  width: 0.18em; height: 0.18em;
-  background: var(--ink);
-  border-radius: 50%;
-  vertical-align: 0.05em;
-  margin-left: 0.05em;
-  transform: translateY(-0.1em);
-  -webkit-text-fill-color: var(--ink);
+  padding-right: 0.18em;
+  margin-right: -0.06em;
 }
-
 .about-body { padding-top: 24px; }
 .about-lead {
   font-size: clamp(18px, 1.4vw, 22px);
@@ -900,6 +904,9 @@ body::before {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shimmer 8s linear infinite;
+  display: inline-block;
+  padding-right: 0.16em;
+  margin-right: -0.06em;
 }
 .clients-header p {
   font-size: 15px;
@@ -1234,6 +1241,9 @@ body::before {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shimmer 6s linear infinite;
+  display: inline-block;
+  padding-right: 0.16em;
+  margin-right: -0.06em;
 }
 
 .contact-grid {
